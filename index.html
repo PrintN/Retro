@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro PrintN</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico"/>
+    <meta name="image" content="https://retro.printn.dev/assets/banner.png" />
+    <meta name="description" content="Retro version of PrintN.dev."/>
+    <meta name="keywords" content="retro, fun, retro website, oldschool, PrintN, Retro PrintN"/>
+    <meta name="author" content="PrintN" />
+    <meta property="og:title" content="Retro PrintN"/>
+    <meta property="og:url" content="https://retro.printn.dev"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://retro.printn.dev/assets/banner.png"/>
+    <meta property="og:description" content="Retro version of PrintN.dev."/>
+    <meta name="twitter:title" content="Retro PrintN"/>
+    <meta name="twitter:image" content="https://retro.printn.dev/assets/banner.png"/>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="darkreader-lock" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Hello! I'm PrintN</h1>
+        <marquee scrollamount="15">🚧 This site is under construction 🚧</marquee>
+        <marquee direction="right" scrollamount="15">🚧 This site is under construction 🚧</marquee>
+        <div id="app" style="height: 100vh">
+        </div>
+        <script type="module">
+            import Webamp from "./assets/webamp.js";
+                  const webamp = new Webamp({
+                    initialTracks: [
+                    {
+                        metaData: {
+                        },
+                        url: "https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/Diablo_Swing_Orchestra_-_01_-_Heroines.mp3",
+                    },
+                    {
+                        metaData: {
+                        },
+                        url: "https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/Eclectek_-_02_-_We_Are_Going_To_Eclecfunk_Your_Ass.mp3",
+                    },
+                    {
+                        metaData: {
+                        },
+                        url: "https://ftp.pieter.com/MP3/DNB/1991 - Pleasure.mp3",
+                    },
+                    {
+                        metaData: {
+                        },
+                        url: "https://ftp.pieter.com/MP3/DNB/1991 - Chant.mp3",
+                    },
+                    ],
+                });
+
+            webamp.renderWhenReady(document.getElementById("app"));
+        </script>
+        <h1>Links</h1>
+        <h1>Guestbook</h1>
+    </div>
+</body>
+</html>
