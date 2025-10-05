@@ -1,7 +1,68 @@
+body {
+  margin: 0;
+}
+
 marquee {
-    font-size: 40px;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    background-color: yellow;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-color: rgb(245, 245, 24);
+}
+
+section {
+  text-align: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  image-rendering: pixelated;
+  padding-top: 20px;
+}
+
+.space {
+  color: white;
+  background-image: url('assets/backgrounds/space.png');
+}
+.sky {
+  color: black;
+  background-image: url('assets/backgrounds/sky.png');
+}
+.mountain {
+  color: white;
+  background-image: url('assets/backgrounds/mountain.png');
+}
+.forest {
+  color: white;
+  background-image: url('assets/backgrounds/forest.png');
+}
+.cave {
+  color: white;
+  background-image: url('assets/backgrounds/cave.png');
+}
+.core {
+  color: white;
+  background-image: url('assets/backgrounds/core.png');
+}
+
+#hit-counter {
+  display: inline-flex;
+  gap: 5px;
+  font-family: "Courier New", "Courier", monospace;
+  color: #00ff00; /* Bright green */
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+#hit-counter span {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid #00ff00; /* Green border */
+  background-color: black; /* Dark background */
+  border-radius: 2px; /* Slight rounding */
+  text-shadow: 1px 1px 2px #00cc00; /* Glow effect */
+}
+
+/* Ensure the empty spans are styled the same as digits */
+#hit-counter span:empty {
+  display: none; /* Hide empty spans if any */
 }

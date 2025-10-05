@@ -22,43 +22,61 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div style="text-align: center;">
+    <section class="space">
         <h1>Hello! I'm PrintN</h1>
+        <div>You are visitor: <span id="hit-counter">Loading...</span></div>
+        <p>Best viewed with:</p>
+        <img src="./assets/netscape.gif"><img src="./assets/internet-explorer.gif">
         <marquee scrollamount="15">🚧 This site is under construction 🚧</marquee>
         <marquee direction="right" scrollamount="15">🚧 This site is under construction 🚧</marquee>
-        <div id="app" style="height: 100vh">
-        </div>
-        <script type="module">
-            import Webamp from "./assets/webamp.js";
-                  const webamp = new Webamp({
-                    initialTracks: [
-                    {
-                        metaData: {
-                        },
-                        url: "https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/Diablo_Swing_Orchestra_-_01_-_Heroines.mp3",
-                    },
-                    {
-                        metaData: {
-                        },
-                        url: "https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/Eclectek_-_02_-_We_Are_Going_To_Eclecfunk_Your_Ass.mp3",
-                    },
-                    {
-                        metaData: {
-                        },
-                        url: "https://ftp.pieter.com/MP3/DNB/1991 - Pleasure.mp3",
-                    },
-                    {
-                        metaData: {
-                        },
-                        url: "https://ftp.pieter.com/MP3/DNB/1991 - Chant.mp3",
-                    },
-                    ],
-                });
-
-            webamp.renderWhenReady(document.getElementById("app"));
-        </script>
+        <div class="webamp"></div>
+    </section>
+    <section class="sky">
         <h1>Links</h1>
+        <ul>
+            <strong>My Projects</strong>
+            <a href="https://github.com/PrintN/Touch-Grass"><li>Touch Grass</li></a>
+            <a href="https://beginnerprivacy.com"><li>Beginner Privacy</li></a>
+            <a href="https://github.com/PrintN/Human-Benchmark"><li>Human Benchmark</li></a>
+            <a href="https://github.com/PrintN/YouTube-Automation-Bot"><li>YouTube Automation Bot</li></a>
+            <a href="https://printn.dev/whoareyou"><li>whoareyou</li></a>
+            <a href="https://github.com/PrintN/Art-Library"><li>Art Library</li></a>
+            <br>
+            <strong>Social Links</strong>
+            <a href="https://printn.dev"><li>PrintN.dev</li></a>
+            <a href="https://github.com/PrintN"><li>GitHub</li></a>
+            <a href="https://codeberg.org/PrintN"><li>Codeberg</li></a>
+            <a href="https://leetcode.com/u/PrintN"><li>LeetCode</li></a>
+            <a href="https://tryhackme.com/u/PrintN"><li>TryHackMe</li></a>
+            <a href="https://printn.dev/donate"><li>Donate</li></a>
+            <br>
+            <strong>Other Websites</strong>
+            <a href="example.com"><li>Example</li></a>
+        </ul>
+    </section>
+    <section class="mountain">
         <h1>Guestbook</h1>
-    </div>
+        <form id="guestbook-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" maxlength="500" required></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <h3>Entries</h3>
+        <ul id="guestbook-entries"></ul>
+    </section>
+    <section class="forest">
+        <h1>Hello World!</h1>
+    </section>
+    <section class="cave">
+        <h1>Hello World!</h1>
+    </section>
+    <section class="core">
+        <h1>Hello World!</h1>
+    </section>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
