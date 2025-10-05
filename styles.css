@@ -48,7 +48,7 @@ section {
   display: inline-flex;
   gap: 5px;
   font-family: "Courier New", "Courier", monospace;
-  color: #00ff00; /* Bright green */
+  color: #00ff00;
   font-size: 24px;
   letter-spacing: 2px;
 }
@@ -56,13 +56,12 @@ section {
 #hit-counter span {
   display: inline-block;
   padding: 5px 10px;
-  border: 2px solid #00ff00; /* Green border */
-  background-color: black; /* Dark background */
-  border-radius: 2px; /* Slight rounding */
-  text-shadow: 1px 1px 2px #00cc00; /* Glow effect */
+  border: 2px solid #00ff00;
+  background-color: black;
+  border-radius: 2px;
+  text-shadow: 1px 1px 2px #00cc00;
 }
 
-/* Ensure the empty spans are styled the same as digits */
 #hit-counter span:empty {
-  display: none; /* Hide empty spans if any */
+  display: none;
 }
