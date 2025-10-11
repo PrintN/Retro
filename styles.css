@@ -19,6 +19,10 @@ section {
   padding-top: 20px;
 }
 
+h1 {
+  font-size: 28px;
+}
+
 .space {
   color: white;
   background-image: url('assets/backgrounds/space.png');
@@ -44,6 +48,7 @@ section {
   background-image: url('assets/backgrounds/core.png');
 }
 
+/* Hit Counter */
 #hit-counter {
   display: inline-flex;
   gap: 5px;
@@ -64,4 +69,47 @@ section {
 
 #hit-counter span:empty {
   display: none;
+}
+
+/* Webamp */
+.webamp {
+  transform: translateY(-20%);
+  height: 100vh;
+}
+
+/* Links */
+.sky ul {
+  width: fit-content;
+  margin: auto;
+  padding: 0;
+  list-style: none;
+}
+
+/* Guestbook */
+.guestbook {
+  margin: auto;
+  font-size: 16px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+.guestbook .name {
+  color: rgb(89, 243, 0);
+  margin-right: 5px;
+}
+
+.guestbook .timestamp {
+  color: rgb(70, 70, 70);
 }

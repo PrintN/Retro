@@ -1,3 +1,9 @@
+// Trailing Cursor
+import { trailingCursor } from "./assets/cursor.js";
+
+new trailingCursor({
+});
+
 // Webamp
 import "./assets/webamp.js";
 
@@ -127,7 +133,7 @@ document.getElementById("guestbook-form").addEventListener("submit", async (e) =
 });
 
 async function fetchGuestbookEntries() {
-  const entriesList = document.getElementById("guestbook-entries");
+  const entriesList = document.querySelector(".guestbook tbody");
   const { data, error } = await supabase
     .from("guestbook")
     .select("*")
@@ -138,11 +144,41 @@ async function fetchGuestbookEntries() {
     entriesList.innerHTML = "<li>Error loading entries</li>";
     return;
   }
-  entriesList.innerHTML = "";
   data.forEach((entry) => {
-    const li = document.createElement("li");
-    li.textContent = `${entry.name}: ${entry.message} (${new Date(entry.created_at).toLocaleString()})`;
-    entriesList.appendChild(li);
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    const name = document.createElement("span");
+    const timestamp = document.createElement("span");
+    const br = document.createElement("br");
+    const message = document.createElement("span");
+    name.className = "name";
+    timestamp.className = "timestamp";
+    message.className = "message";
+
+    name.textContent = entry.name;
+
+    const date = new Date(entry.created_at);
+    const options = {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    };
+    timestamp.textContent = date.toLocaleString('en-GB', options);
+
+    message.textContent = entry.message;
+
+    td.appendChild(name);
+    td.appendChild(timestamp);
+    td.appendChild(br);
+    td.appendChild(message);
+
+    tr.appendChild(td);
+    entriesList.appendChild(tr);
   });
 }
 
