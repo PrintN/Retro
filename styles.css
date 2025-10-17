@@ -71,6 +71,12 @@ h1 {
   display: none;
 }
 
+/* Alien */
+.alien {
+  position: absolute;
+  right: 10px;
+}
+
 /* Webamp */
 .webamp {
   transform: translateY(-20%);
