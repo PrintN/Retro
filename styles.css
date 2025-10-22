@@ -13,6 +13,7 @@ marquee {
 section {
   text-align: center;
   height: 100vh;
+  min-height: 900px;
   background-size: cover;
   background-position: center;
   image-rendering: pixelated;
@@ -118,4 +119,22 @@ th, td {
 
 .guestbook .timestamp {
   color: rgb(70, 70, 70);
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  outline: 1px solid #494a4f;
+  border-radius: 1px;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
 }
