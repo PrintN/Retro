@@ -13,7 +13,7 @@ marquee {
 section {
   text-align: center;
   height: 100vh;
-  min-height: 900px;
+  min-height: 1000px;
   background-size: cover;
   background-position: center;
   image-rendering: pixelated;
