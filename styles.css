@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  color: white;
 }
 
 marquee {
@@ -25,27 +26,21 @@ h1 {
 }
 
 .space {
-  color: white;
   background-image: url('assets/backgrounds/space.png');
 }
 .sky {
-  color: black;
   background-image: url('assets/backgrounds/sky.png');
 }
 .mountain {
-  color: white;
   background-image: url('assets/backgrounds/mountain.png');
 }
 .forest {
-  color: white;
   background-image: url('assets/backgrounds/forest.png');
 }
 .cave {
-  color: white;
   background-image: url('assets/backgrounds/cave.png');
 }
 .core {
-  color: white;
   background-image: url('assets/backgrounds/core.png');
 }
 
@@ -96,6 +91,7 @@ h1 {
 .guestbook {
   margin: auto;
   font-size: 16px;
+  background-color: gray;
 }
 
 table {
@@ -113,12 +109,13 @@ th, td {
 }
 
 .guestbook .name {
-  color: rgb(89, 243, 0);
+  color: #14ff00;
+  font-style: bold;
   margin-right: 5px;
 }
 
 .guestbook .timestamp {
-  color: rgb(70, 70, 70);
+  color: #000000;
 }
 
 .pagination button {
