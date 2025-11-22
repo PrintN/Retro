@@ -249,3 +249,95 @@ window.addEventListener("load", async () => {
   const number = counter.textContent;
   counter.innerHTML = number.split("").map(digit => `<span>${digit}</span>`).join("");
 });
+
+// Snake game
+(function() {
+    const canvas = document.getElementById("snake-canvas");
+    const ctx = canvas.getContext("2d");
+    const scoreEl = document.getElementById("snake-score");
+    const grid = 20;
+    let count = 0;
+    let score = 0;
+    
+    let snake = { x: 200, y: 200 };
+    let trail = [];
+    let tail = 5;
+    let dx = grid;
+    let dy = 0;
+    
+    function randomFood() {
+    return {
+        x: Math.floor(Math.random() * (canvas.width / grid)) * grid,
+        y: Math.floor(Math.random() * (canvas.height / grid)) * grid
+    };
+    }
+    let food = randomFood();
+
+    function loop() {
+    requestAnimationFrame(loop);
+    if (++count < 6) return;
+    count = 0;
+
+    ctx.fillStyle = "#000";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    snake.x += dx;
+    snake.y += dy;
+
+    if (snake.x >= canvas.width) snake.x = 0;
+    if (snake.x < 0) snake.x = canvas.width - grid;
+    if (snake.y >= canvas.height) snake.y = 0;
+    if (snake.y < 0) snake.y = canvas.height - grid;
+
+    trail.push({x: snake.x, y: snake.y});
+    while (trail.length > tail) trail.shift();
+
+    for (let i = 0; i < trail.length - 1; i++) {
+        if (trail[i].x === snake.x && trail[i].y === snake.y) {
+        tail = 5;
+        score = 0;
+        scoreEl.textContent = "Score: 0";
+        }
+    }
+
+    ctx.fillStyle = "#0f0";
+    for (let i = 0; i < trail.length; i++) {
+        ctx.fillRect(trail[i].x + 1, trail[i].y + 1, grid - 2, grid - 2);
+    }
+
+    ctx.fillStyle = "#f00";
+    ctx.fillRect(food.x + 1, food.y + 1, grid - 2, grid - 2);
+
+    if (snake.x === food.x && snake.y === food.y) {
+        tail++;
+        score += 10;
+        scoreEl.textContent = "Score: " + score;
+        food = randomFood();
+    }
+    }
+    requestAnimationFrame(loop);
+
+    document.addEventListener("keydown", e => {
+    if ([37,38,39,40,65,87,83,68].includes(e.keyCode)) e.preventDefault();
+    if ((e.keyCode === 37 || e.keyCode === 65) && dx === 0) { dx = -grid; dy = 0; } // left / A
+    if ((e.keyCode === 38 || e.keyCode === 87) && dy === 0) { dx = 0; dy = -grid; } // up / W
+    if ((e.keyCode === 39 || e.keyCode === 68) && dx === 0) { dx = grid; dy = 0; }  // right / D
+    if ((e.keyCode === 40 || e.keyCode === 83) && dy === 0) { dx = 0; dy = grid; }  // down / S
+    });
+
+    let tx = 0, ty = 0;
+    canvas.addEventListener("touchstart", e => { tx = e.touches[0].screenX; ty = e.touches[0].screenY; e.preventDefault(); }, {passive:false});
+    canvas.addEventListener("touchend", e => {
+    const ex = e.changedTouches[0].screenX;
+    const ey = e.changedTouches[0].screenY;
+    const diffX = tx - ex;
+    const diffY = ty - ey;
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX > 0 && dx === 0) { dx = -grid; dy = 0; }
+        if (diffX < 0 && dx === 0) { dx = grid; dy = 0; }
+    } else {
+        if (diffY > 0 && dy === 0) { dx = 0; dy = -grid; }
+        if (diffY < 0 && dy === 0) { dx = 0; dy = grid; }
+    }
+    });
+})();
