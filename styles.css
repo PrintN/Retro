@@ -156,3 +156,9 @@ th, td {
   font-size: 20px;
   margin: 10px;
 }
+
+@media (max-width: 420px) {
+    #snake-canvas {
+        width: 90%;
+    }
+}
