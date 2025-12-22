@@ -42,6 +42,9 @@ h1 {
 }
 .core {
   background-image: url('assets/backgrounds/core.png');
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
 }
 
 /* Hit Counter */
@@ -161,4 +164,32 @@ th, td {
     #snake-canvas {
         width: 90%;
     }
+}
+
+/* Misc */
+.misc-first-row {
+  justify-self: center;
+  grid-row: 1;
+}
+.misc-second-row {
+  grid-row: 2;
+}
+
+.articles-i-recommend {
+  color: black;
+  background-color: white;
+  width: 350px;
+  border: solid 2px black;
+  border-radius: 8px;
+}
+
+.articles-i-recommend ul li {
+  text-align: left;
+}
+
+.gandalf-gif {
+  grid-row: 3 !important;
+  width: 90vw;
+  height: 140px;
+  justify-self: center;
 }
